@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "Bash(npm info *)",
-      "Bash(npm pack *)"
+      "Bash(npm pack *)",
+      "WebSearch",
+      "WebFetch(domain:airqo.net)",
+      "WebFetch(domain:platform.airqo.net)",
+      "WebFetch(domain:analytics.airqo.net)",
+      "WebFetch(domain:brandfetch.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:docs.airqo.net)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)"
     ],
     "additionalDirectories": [
       "/home/muncaster/Desktop/airqo"

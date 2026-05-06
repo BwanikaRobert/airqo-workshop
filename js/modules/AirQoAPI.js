@@ -13,7 +13,7 @@
 class AirQoAPI {
   constructor() {
     this.PROXY_URL = '/api/measurements';
-    this.PAGE_LIMIT = 500;
+    this.PAGE_LIMIT = 100;
   }
 
   async _fetchPage(page) {
@@ -48,6 +48,9 @@ class AirQoAPI {
       totalPages = data.meta?.pages || 1;
       allMeasurements = allMeasurements.concat(data.measurements);
       page++;
+
+      // Small delay between pages to avoid AirQo rate limiting
+      if (page <= totalPages) await new Promise(r => setTimeout(r, 500));
     } while (page <= totalPages);
 
     console.log(`[AirQoAPI] Fetched ${allMeasurements.length} total measurements across ${totalPages} page(s).`);

@@ -1,13 +1,15 @@
 /* ============================================================
    AirQo Pollution Visualizer — Styles
+   Brand colours sourced from AirQo platform (platform.airqo.net)
+   Primary: #145FFF  |  Dark bg: #1D1F20  |  Border: #334155
    ============================================================ */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-  background: #1a1a2e;
-  color: #e0e0e0;
+  background: #1D1F20;
+  color: #EDEDED;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -16,7 +18,7 @@ body {
 
 /* ---- Header ---- */
 header {
-  background: linear-gradient(135deg, #0d7377 0%, #14a085 100%);
+  background: linear-gradient(135deg, #145FFF 0%, #0d50e0 100%);
   padding: 12px 20px;
   display: flex;
   align-items: center;
@@ -63,36 +65,36 @@ header {
 
 /* ---- Toolbar ---- */
 .toolbar {
-  background: #16213e;
+  background: #252729;
   padding: 8px 20px;
   display: flex;
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
-  border-bottom: 1px solid #0f3460;
+  border-bottom: 1px solid #334155;
   flex-wrap: wrap;
 }
 
 .toolbar-label {
   font-size: 0.8rem;
-  color: #a0a0b0;
+  color: #8899AA;
   white-space: nowrap;
 }
 
 .mode-btn {
   padding: 6px 16px;
-  border: 2px solid #0f3460;
+  border: 2px solid #334155;
   border-radius: 20px;
   background: transparent;
-  color: #a0c4ff;
+  color: #93b4ff;
   font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
 }
 
-.mode-btn:hover { background: #0f3460; color: white; }
-.mode-btn.active { background: #0d7377; border-color: #0d7377; color: white; font-weight: 600; }
+.mode-btn:hover { background: #334155; color: white; }
+.mode-btn.active { background: #145FFF; border-color: #145FFF; color: white; font-weight: 600; }
 
 /* ---- Map area (wraps panel + map) ---- */
 .map-area {
@@ -112,18 +114,18 @@ header {
 .toolbar-divider {
   width: 1px;
   height: 24px;
-  background: #0f3460;
+  background: #334155;
   margin: 0 4px;
 }
 
 .mode-btn--routes {
-  background: rgba(13, 115, 119, 0.2);
-  border-color: #0d7377;
-  color: #4dd0e1;
+  background: rgba(20, 95, 255, 0.12);
+  border-color: #145FFF;
+  color: #93b4ff;
 }
 
 .mode-btn--routes.active {
-  background: #0d7377;
+  background: #145FFF;
   color: white;
 }
 
@@ -134,9 +136,9 @@ header {
   left: -380px;
   width: 360px;
   height: 100%;
-  background: rgba(13, 17, 38, 0.97);
+  background: rgba(29, 31, 32, 0.97);
   backdrop-filter: blur(10px);
-  border-right: 1px solid #1a3060;
+  border-right: 1px solid #334155;
   z-index: 20;
   display: flex;
   flex-direction: column;
@@ -155,27 +157,27 @@ header {
   justify-content: space-between;
   align-items: flex-start;
   padding: 16px 16px 12px;
-  border-bottom: 1px solid #1a3060;
+  border-bottom: 1px solid #334155;
   flex-shrink: 0;
-  background: linear-gradient(135deg, #0a1628 0%, #0d2040 100%);
+  background: linear-gradient(135deg, #1D1F20 0%, #252729 100%);
 }
 
 .route-panel-title {
   font-size: 1rem;
   font-weight: 700;
-  color: #4dd0e1;
+  color: #93b4ff;
 }
 
 .route-panel-sub {
   font-size: 0.72rem;
-  color: #7090b0;
+  color: #647483;
   margin-top: 2px;
 }
 
 .close-panel-btn {
   background: transparent;
   border: none;
-  color: #7090b0;
+  color: #647483;
   font-size: 1.1rem;
   cursor: pointer;
   padding: 2px 6px;
@@ -183,12 +185,12 @@ header {
   line-height: 1;
   transition: color 0.2s, background 0.2s;
 }
-.close-panel-btn:hover { color: white; background: #1a3060; }
+.close-panel-btn:hover { color: white; background: #334155; }
 
 /* ---- Route Form ---- */
 .route-form {
   padding: 14px 16px;
-  border-bottom: 1px solid #1a3060;
+  border-bottom: 1px solid #334155;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -199,29 +201,29 @@ header {
 
 .route-input-label {
   font-size: 0.7rem;
-  color: #7090b0;
+  color: #647483;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .route-select {
-  background: #0d1f3c;
-  border: 1px solid #1a3060;
+  background: #1D1F20;
+  border: 1px solid #334155;
   border-radius: 6px;
   padding: 8px 28px 8px 10px;
-  color: #e0e8f0;
+  color: #EDEDED;
   font-size: 0.85rem;
   outline: none;
   transition: border-color 0.2s;
   width: 100%;
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237090b0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23647483' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 10px center;
 }
-.route-select:focus { border-color: #0d7377; }
-.route-select option { background: #0d1f3c; color: #e0e8f0; }
+.route-select:focus { border-color: #145FFF; }
+.route-select option { background: #1D1F20; color: #EDEDED; }
 
 .travel-mode-group { display: flex; flex-direction: column; gap: 6px; }
 
@@ -230,21 +232,21 @@ header {
 .travel-btn {
   flex: 1;
   padding: 6px 4px;
-  border: 1px solid #1a3060;
+  border: 1px solid #334155;
   border-radius: 6px;
   background: transparent;
-  color: #7090b0;
+  color: #647483;
   font-size: 0.78rem;
   cursor: pointer;
   transition: all 0.2s;
   text-align: center;
 }
-.travel-btn:hover { background: #0d2040; color: #a0c4ff; }
-.travel-btn.active { background: #0d7377; border-color: #0d7377; color: white; font-weight: 600; }
+.travel-btn:hover { background: #252729; color: #93b4ff; }
+.travel-btn.active { background: #145FFF; border-color: #145FFF; color: white; font-weight: 600; }
 
 .find-routes-btn {
   padding: 10px;
-  background: linear-gradient(135deg, #0d7377 0%, #14a085 100%);
+  background: linear-gradient(135deg, #145FFF 0%, #0d50e0 100%);
   border: none;
   border-radius: 8px;
   color: white;
@@ -268,23 +270,23 @@ header {
 
 .routes-found-label {
   font-size: 0.72rem;
-  color: #7090b0;
+  color: #647483;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 2px;
 }
 
 .route-card {
-  background: #0d1f3c;
-  border: 1px solid #1a3060;
+  background: #252729;
+  border: 1px solid #334155;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
-.route-card:hover { border-color: #0d7377; box-shadow: 0 0 0 1px #0d7377; }
-.route-card--best { border-color: #1a4030; }
-.route-card--selected { border-color: #4dd0e1; box-shadow: 0 0 0 2px rgba(77,208,225,0.3); }
+.route-card:hover { border-color: #145FFF; box-shadow: 0 0 0 1px #145FFF; }
+.route-card--best { border-color: #1a3a20; }
+.route-card--selected { border-color: #93b4ff; box-shadow: 0 0 0 2px rgba(147,180,255,0.3); }
 
 .route-card-header {
   display: flex;
@@ -308,19 +310,19 @@ header {
 .route-rank-label {
   font-size: 0.8rem;
   font-weight: 700;
-  color: #c0d8f0;
+  color: #EDEDED;
 }
 
 .route-via {
   font-size: 0.72rem;
-  color: #7090b0;
+  color: #647483;
 }
 
 .route-metrics {
   display: flex;
   gap: 0;
-  border-top: 1px solid #1a3060;
-  border-bottom: 1px solid #1a3060;
+  border-top: 1px solid #334155;
+  border-bottom: 1px solid #334155;
 }
 
 .route-metric {
@@ -329,12 +331,12 @@ header {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  border-right: 1px solid #1a3060;
+  border-right: 1px solid #334155;
 }
 .route-metric:last-child { border-right: none; }
 
-.metric-label { font-size: 0.65rem; color: #7090b0; text-transform: uppercase; }
-.metric-value { font-size: 0.85rem; font-weight: 700; color: #c0d8f0; }
+.metric-label { font-size: 0.65rem; color: #647483; text-transform: uppercase; }
+.metric-value { font-size: 0.85rem; font-weight: 700; color: #EDEDED; }
 
 .route-aqi-badge {
   padding: 8px 12px;
@@ -352,10 +354,10 @@ header {
 }
 
 .route-error {
-  color: #e57373;
+  color: #EF4444;
   font-size: 0.85rem;
-  background: rgba(229, 115, 115, 0.1);
-  border: 1px solid rgba(229, 115, 115, 0.3);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
   border-radius: 8px;
   padding: 12px;
   line-height: 1.5;
@@ -364,8 +366,8 @@ header {
 .route-coverage-note {
   padding: 12px 16px;
   font-size: 0.7rem;
-  color: #445566;
-  border-top: 1px solid #1a3060;
+  color: #3d4a58;
+  border-top: 1px solid #334155;
   line-height: 1.5;
   flex-shrink: 0;
 }
@@ -376,18 +378,18 @@ header {
   bottom: 30px;
   left: 12px;
   pointer-events: none;
-  background: rgba(22, 33, 62, 0.92);
+  background: rgba(29, 31, 32, 0.95);
   border-radius: 10px;
   padding: 12px 16px;
   font-size: 0.78rem;
-  border: 1px solid #0f3460;
+  border: 1px solid #334155;
   z-index: 5;
   backdrop-filter: blur(4px);
 }
 
 .legend-title {
   font-weight: 700;
-  color: #a0c4ff;
+  color: #93b4ff;
   margin-bottom: 8px;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -399,7 +401,7 @@ header {
   align-items: center;
   gap: 8px;
   margin-bottom: 5px;
-  color: #d0d0e0;
+  color: #EDEDED;
 }
 
 .legend-dot {
@@ -414,7 +416,7 @@ header {
 #loading-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(22, 33, 62, 0.88);
+  background: rgba(29, 31, 32, 0.90);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -426,8 +428,8 @@ header {
 .spinner {
   width: 48px;
   height: 48px;
-  border: 5px solid rgba(13, 115, 119, 0.3);
-  border-top-color: #0d7377;
+  border: 5px solid rgba(20, 95, 255, 0.25);
+  border-top-color: #145FFF;
   border-radius: 50%;
   animation: spin 0.9s linear infinite;
   margin-bottom: 16px;
@@ -435,19 +437,19 @@ header {
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
-.loading-text { color: #a0c4ff; font-size: 1rem; }
+.loading-text { color: #93b4ff; font-size: 1rem; }
 
 .fatal-error {
   background: #2a0a0a;
-  border: 1px solid #c0392b;
+  border: 1px solid #EF4444;
   border-radius: 12px;
   padding: 32px 40px;
   text-align: center;
   max-width: 480px;
 }
 
-.fatal-error h2 { color: #e74c3c; margin-bottom: 12px; }
-.fatal-error p { color: #d0d0d0; line-height: 1.6; margin-bottom: 8px; }
+.fatal-error h2 { color: #EF4444; margin-bottom: 12px; }
+.fatal-error p { color: #EDEDED; line-height: 1.6; margin-bottom: 8px; }
 
 /* ---- Error banner ---- */
 #error-banner {
@@ -456,7 +458,7 @@ header {
   top: 12px;
   left: 50%;
   transform: translateX(-50%);
-  background: #c0392b;
+  background: #EF4444;
   color: white;
   padding: 10px 24px;
   border-radius: 8px;
@@ -470,15 +472,15 @@ header {
 /* ---- Route hover tooltip (inside Google Maps InfoWindow) ---- */
 .hover-tooltip {
   font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-  min-width: 190px;
-  padding: 2px 0;
+  min-width: 200px;
+  padding: 14px 16px;
 }
 
 .ht-name {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  color: #1a1a2e;
-  margin-bottom: 6px;
+  color: #101828;
+  margin-bottom: 8px;
   line-height: 1.3;
 }
 
@@ -487,29 +489,42 @@ header {
   color: white;
   font-size: 0.72rem;
   font-weight: 600;
-  padding: 2px 10px;
+  padding: 3px 12px;
   border-radius: 12px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
-.ht-stats { display: flex; flex-direction: column; gap: 4px; }
+.ht-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid #E2E8F0;
+  padding-top: 10px;
+  margin-top: 2px;
+}
 
 .ht-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.8rem;
-  color: #444;
-  gap: 12px;
+  color: #1F2937;
+  gap: 16px;
 }
 
-.ht-time { color: #888; font-size: 0.72rem; margin-top: 2px; }
+.ht-time { color: #8899AA; font-size: 0.72rem; margin-top: 2px; }
 
 /* ---- Google Maps InfoWindow overrides ---- */
-.gm-style .gm-style-iw-c { padding: 0 !important; border-radius: 12px !important; overflow: hidden; }
+.gm-style .gm-style-iw-c {
+  padding: 0 !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+}
 .gm-style .gm-style-iw-d { overflow: hidden !important; }
 .gm-style .gm-style-iw-t::after { display: none; }
 
+/* ---- Station InfoWindow (click on marker) ---- */
 .info-window { width: 260px; font-family: 'Segoe UI', Roboto, Arial, sans-serif; }
 
 .info-header {
@@ -524,13 +539,20 @@ header {
 .info-category { font-size: 0.85rem; font-weight: 600; line-height: 1.3; }
 
 .info-body { padding: 12px 16px 16px; background: white; }
-.info-body h3 { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin-bottom: 2px; }
-.info-address { font-size: 0.75rem; color: #666; margin-bottom: 10px; }
+.info-body h3 { font-size: 0.95rem; font-weight: 700; color: #101828; margin-bottom: 2px; }
+.info-address { font-size: 0.75rem; color: #647483; margin-bottom: 10px; }
 
 .info-stats { display: flex; gap: 16px; margin-bottom: 10px; }
 .info-stat { display: flex; flex-direction: column; }
-.stat-label { font-size: 0.65rem; color: #888; text-transform: uppercase; }
-.stat-value { font-size: 1rem; font-weight: 700; color: #1a1a2e; }
+.stat-label { font-size: 0.65rem; color: #8899AA; text-transform: uppercase; }
+.stat-value { font-size: 1rem; font-weight: 700; color: #101828; }
 
-.info-meta { font-size: 0.72rem; color: #777; margin-bottom: 2px; }
-.info-tip { font-size: 0.78rem; color: #444; margin-top: 8px; line-height: 1.5; border-top: 1px solid #eee; padding-top: 8px; }
+.info-meta { font-size: 0.72rem; color: #647483; margin-bottom: 2px; }
+.info-tip {
+  font-size: 0.78rem;
+  color: #1F2937;
+  margin-top: 8px;
+  line-height: 1.5;
+  border-top: 1px solid #E2E8F0;
+  padding-top: 8px;
+}
