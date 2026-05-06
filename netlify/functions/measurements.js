@@ -26,11 +26,12 @@ exports.handler = async (event) => {
       body: JSON.stringify(response.data),
     };
   } catch (err) {
-    const status  = err.response?.status || 500;
-    const message = err.response?.data?.message || err.message;
+    const status   = err.response?.status || 500;
+    const message  = err.response?.data?.message || err.message;
+    const fullBody = err.response?.data ?? null;
     return {
       statusCode: status,
-      body: JSON.stringify({ error: message }),
+      body: JSON.stringify({ error: message, detail: fullBody }),
     };
   }
 };
