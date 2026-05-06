@@ -13,7 +13,7 @@
 class AirQoAPI {
   constructor() {
     this.PROXY_URL = '/api/measurements';
-    this.PAGE_LIMIT = 30;
+    this.PAGE_LIMIT = 500;
   }
 
   async _fetchPage(page) {
