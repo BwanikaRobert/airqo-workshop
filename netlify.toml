@@ -1,0 +1,19 @@
+[build]
+  publish   = "."
+  functions = "netlify/functions"
+
+# Rewrite /api/* to the matching Netlify Function
+[[redirects]]
+  from   = "/api/config"
+  to     = "/.netlify/functions/config"
+  status = 200
+
+[[redirects]]
+  from   = "/api/measurements"
+  to     = "/.netlify/functions/measurements"
+  status = 200
+
+[[redirects]]
+  from   = "/api/directions"
+  to     = "/.netlify/functions/directions"
+  status = 200

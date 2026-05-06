@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm info *)",
+      "Bash(npm pack *)"
+    ],
+    "additionalDirectories": [
+      "/home/muncaster/Desktop/airqo"
+    ]
+  }
+}

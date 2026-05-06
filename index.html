@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AirQo Pollution Visualizer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== Header ========== -->
+  <header>
+    <div>
+      <div class="app-title">AirQo Pollution Visualizer</div>
+      <div class="app-subtitle">Real-time air quality monitoring · Kampala, Uganda</div>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-label">Stations</span>
+        <span class="stat-value" id="stat-count">—</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Avg PM2.5</span>
+        <span class="stat-value" id="stat-avg">—</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Max PM2.5</span>
+        <span class="stat-value" id="stat-max">—</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== Toolbar ========== -->
+  <div class="toolbar">
+    <span class="toolbar-label">View:</span>
+    <button class="mode-btn" data-mode="markers">Markers</button>
+    <button class="mode-btn" data-mode="heatmap">Heatmap</button>
+    <button class="mode-btn" data-mode="clustering">Clustering</button>
+
+    <div class="toolbar-divider"></div>
+
+    <button class="mode-btn mode-btn--routes" data-mode="routes">Safe Route Planner</button>
+  </div>
+
+  <!-- ========== Map area (panel + map side by side) ========== -->
+  <div class="map-area">
+
+    <!-- Route Planner Panel (slides in from left) -->
+    <div id="route-panel" class="route-panel">
+      <div class="route-panel-header">
+        <div>
+          <div class="route-panel-title">Safe Route Planner</div>
+          <div class="route-panel-sub">Routes ranked by PM2.5 exposure</div>
+        </div>
+        <button class="close-panel-btn" id="close-route-panel" title="Close panel">&#x2715;</button>
+      </div>
+
+      <!-- Inputs -->
+      <div class="route-form">
+        <div class="route-input-group">
+          <label class="route-input-label">From</label>
+          <select id="origin-select" class="route-select">
+            <option value="" disabled selected>Select a location…</option>
+          </select>
+        </div>
+        <div class="route-input-group">
+          <label class="route-input-label">To</label>
+          <select id="destination-select" class="route-select">
+            <option value="" disabled selected>Select a location…</option>
+          </select>
+        </div>
+
+        <!-- Travel mode -->
+        <div class="travel-mode-group">
+          <span class="route-input-label">Travel mode</span>
+          <div class="travel-modes">
+            <button class="travel-btn active" data-mode="WALKING">Walking</button>
+            <button class="travel-btn" data-mode="BICYCLING">Cycling</button>
+            <button class="travel-btn" data-mode="DRIVING">Driving</button>
+          </div>
+        </div>
+
+        <button id="find-routes-btn" class="find-routes-btn">Find Safe Routes</button>
+      </div>
+
+      <!-- Results injected here by RoutePlannerModule -->
+      <div id="route-results"></div>
+
+      <!-- Coverage explanation -->
+      <div class="route-coverage-note">
+        Routes are scored using nearby AirQo sensor readings.
+        Lower sensor coverage means estimated air quality may be less accurate.
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div id="map"></div>
+
+    <!-- AQI Legend -->
+    <div class="legend">
+      <div class="legend-title">PM2.5 / AQI</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#00C853"></div>Good (0–9.1)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ECAA06"></div>Moderate (9.1–35.5)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#FF851F"></div>Sensitive Groups (35.5–55.5)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#F7453C"></div>Unhealthy (55.5–125.5)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#8F3F97"></div>Very Unhealthy (125.5–225.5)</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#7E0023"></div>Hazardous (225.5+)</div>
+    </div>
+
+    <!-- Error banner -->
+    <div id="error-banner"></div>
+
+    <!-- Loading overlay -->
+    <div id="loading-overlay">
+      <div class="spinner"></div>
+      <div class="loading-text">Loading air quality data...</div>
+    </div>
+  </div>
+
+  <!-- ========== Scripts ========== -->
+  <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+
+  <script src="js/airqo-icons.js"></script>
+  <script src="js/StateManager.js"></script>
+  <script src="js/MapManager.js"></script>
+  <script src="js/modules/AirQoAPI.js"></script>
+  <script src="js/modules/HeatmapModule.js"></script>
+  <script src="js/modules/MarkersModule.js"></script>
+  <script src="js/modules/ClusteringModule.js"></script>
+  <script src="js/modules/RoutePlannerModule.js"></script>
+  <script src="js/StageManager.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
