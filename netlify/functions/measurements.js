@@ -15,6 +15,8 @@ exports.handler = async (event) => {
   const page  = parseInt(params.page)  || 1;
   const limit = parseInt(params.limit) || 30;
 
+  console.log('[measurements] key present:', !!process.env.AIRQO_API_KEY, '| first 6 chars:', process.env.AIRQO_API_KEY?.slice(0, 6));
+
   try {
     const response = await axios.get(AIRQO_GRID_URL, {
       params: { token: process.env.AIRQO_API_KEY, page, limit },
